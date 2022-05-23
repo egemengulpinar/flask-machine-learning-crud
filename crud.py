@@ -13,7 +13,7 @@ def create_user(SepalLengthCm, SepalWidthCm, PetalLengthCm, PetalWidthCm, Specie
 
 def get_users():
     """Returns all users in database"""
-
+    
     return User.query.all()
 
 

@@ -1,4 +1,4 @@
-from flask import (Blueprint, Flask, render_template, request, redirect)
+from flask import (Blueprint, Flask, render_template, request, redirect, send_file)
 from jinja2 import StrictUndefined
 from model import connect_to_db
 import crud
@@ -68,6 +68,19 @@ def delete_user(Id):
 
 @main.route('/about')
 def about():
+
+    # users = crud.get_users()
+    
+    # for user in users:
+    from charts import calculate_knn
+    
+   
+
+    #     print(user.SepalLengthCm)
+
+  
+
+    #img = calculate_knn()
     return render_template("about.html")
 
 

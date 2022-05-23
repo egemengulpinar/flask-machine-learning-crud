@@ -28,13 +28,13 @@ class User(db.Model):
 
 def connect_to_db(flask_app, db_uri='sqlite:///database_iris.db', echo=True):
     flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
-    flask_app.config['SECRET_KEY'] = '9OLWxND4o83j4K4iuopO'
+    flask_app.config['SECRET_KEY'] = '2ZOWxGP4o83j9E4muopO'
     flask_app.config['SQLALCHEMY_ECHO'] = echo
     flask_app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
     db.app = flask_app
     db.init_app(flask_app)
-    db.create_all(app=flask_app)
+    #db.create_all(app=flask_app) initialize just 1 time.
     print('Connected to the db!')
 
 
