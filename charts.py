@@ -45,6 +45,10 @@ def calculate_knn():
 
     pl.savefig("chart.png")
 
+    
+
+    
+
 
   
   

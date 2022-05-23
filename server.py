@@ -72,7 +72,7 @@ def about():
     # users = crud.get_users()
     
     # for user in users:
-    from charts import calculate_knn
+    #from charts import calculate_knn
     
    
 
@@ -82,6 +82,7 @@ def about():
 
     #img = calculate_knn()
     return render_template("about.html")
+    
 
 
 if __name__ == '__main__':
