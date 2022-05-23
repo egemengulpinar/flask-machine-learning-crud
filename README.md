@@ -1,5 +1,7 @@
 
 # Flask Machine Learning & CRUD Deploy
+
+## Using & Run ` `
 ```bash
   git clone https://github.com/egemengulpinar/flask-machine-learning-crud
 ```
@@ -17,4 +19,4 @@ then,
 python source.py 
 ```
 
-## Using & Run ` `
+
