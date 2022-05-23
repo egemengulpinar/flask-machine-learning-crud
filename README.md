@@ -17,4 +17,4 @@ then,
 ```
 python source.py 
 ```
-![Alt text](project_screenshot.png?raw=true "Title")
+![Alt text](project_ss.png?raw=true "Title")
