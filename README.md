@@ -15,6 +15,6 @@ pip install -r requirements.txt
 then,
 
 ```
-python source.py 
+python3 source.py 
 ```
 ![Alt text](project_screenshot.png?raw=true "Title")
