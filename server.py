@@ -1,14 +1,18 @@
-from flask import (Flask, render_template, request, redirect)
+from flask import (Blueprint, Flask, render_template, request, redirect)
 from jinja2 import StrictUndefined
 from model import connect_to_db
 import crud
+from flask_login import LoginManager, login_required 
 from MachineLearningCode import MachineLearningCode
 app = Flask(__name__)
 app.jinja_env.undefined = StrictUndefined
 app.jinja_env.add_extension('jinja2.ext.loopcontrols')
 MLC=MachineLearningCode()
 
-@app.route('/', methods=["GET", "POST"])
+main = Blueprint('main', __name__)
+
+@main.route('/', methods=["GET", "POST"])
+@login_required
 def homepage():
     MLC.train()
     users = crud.get_users()
@@ -34,7 +38,7 @@ def homepage():
     return render_template('homepage.html', users=users)
 
 
-@app.route('/update/<Id>', methods=["GET", "POST"])
+@main.route('/update/<Id>', methods=["GET", "POST"])
 def update_user(Id):
 
     user = crud.get_user_by_id(Id)
@@ -54,7 +58,7 @@ def update_user(Id):
     return render_template('update.html', user=user)
 
 
-@app.route('/delete/<Id>', methods=["GET", "POST"])
+@main.route('/delete/<Id>', methods=["GET", "POST"])
 def delete_user(Id):
 
     crud.delete_user(Id)
@@ -62,7 +66,7 @@ def delete_user(Id):
 
     return redirect('/')
 
-@app.route('/about')
+@main.route('/about')
 def about():
     return render_template("about.html")
 
@@ -71,4 +75,19 @@ if __name__ == '__main__':
     from flask import Flask
 
     connect_to_db(app)
+    login_manager = LoginManager()
+    login_manager.login_view = 'auth.login'
+    login_manager.init_app(app)
+    from model import Login
+    @login_manager.user_loader
+    def load_user(user_id):
+        # since the user_id is just the primary key of our user table, use it in the query for the user
+        return Login.query.get(int(user_id))
+
+    from auth import auth 
+    from server import homepage
+    app.register_blueprint(auth)
+    
+    app.register_blueprint(main)
+
     app.run(host='localhost',port="3003", debug=True)
