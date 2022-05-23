@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}People Manager{% endblock %}
+
+{% block body %}
+<div>
+    <div>
+        <h2>Welcome to People Manager</h2>
+        <form action="/update/{{user.Id}}" method="POST">
+            <input type="number" id="SepalLengthCm" name="SepalLengthCm" placeholder="{{user.SepalLengthCm}}" value="{{user.SepalLengthCm}}">
+            <input type="number" id="SepalWidthCm" name="SepalWidthCm" placeholder="{{user.SepalWidthCm}}" value="{{user.SepalWidthCm}}">
+            <input type="number" id="PetalLengthCm" name="PetalLengthCm" placeholder="{{user.PetalLengthCm}}" value="{{user.PetalLengthCm}}">
+            <input type="number" id="PetalWidthCm" name="PetalWidthCm" placeholder="{{user.PetalWidthCm}}" value="{{user.PetalWidthCm}}">
+            <input type="text" id="Species" name="Species" placeholder="{{user.Species}}" value="{{user.Species}}">
+            <button type="submit">Save</button>
+        </form> 
+    </div> 
+    <div>
+        <a href="/">Go Back</a>
+    </div>
+</div>
+{% endblock %}
