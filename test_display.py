@@ -7,20 +7,19 @@ from sklearn.inspection import DecisionBoundaryDisplay
 
 n_neighbors = 15
 
-# import some data to play with
+
 iris = datasets.load_iris()
 
-# we only take the first two features. We could avoid this ugly
-# slicing by using a two-dim dataset
+
 X = iris.data[:, :2]
 y = iris.target
 
-# Create color maps
+
 cmap_light = ListedColormap(["orange", "cyan", "cornflowerblue"])
 cmap_bold = ["darkorange", "c", "darkblue"]
 
 for weights in ["uniform", "distance"]:
-    # we create an instance of Neighbours Classifier and fit the data.
+
     clf = neighbors.KNeighborsClassifier(n_neighbors, weights=weights)
     clf.fit(X, y)
 
