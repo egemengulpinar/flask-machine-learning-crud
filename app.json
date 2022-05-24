@@ -1,5 +1,5 @@
 {
-  "name": "Node.js Sample",
+  "name": "Flask ML CRUD",
   "description": "Egemen Gulpinar Flask ML CRUD Application Project",
   "repository": "https://github.com/egemengulpinar/flask-machine-learning-crud.git",
   "keywords": ["node", "express", "static"]
