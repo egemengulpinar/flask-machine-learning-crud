@@ -27,6 +27,7 @@ use  ```/main_login/login``` URL prefix for login the application.
 
 ![Alt text](project_ss.png?raw=true "Title")
 
+![Alt text](heroku2.png?raw=true "Title")
 ## Heroku Dashboard Screenshot
 
 ![Alt text](heroku.png?raw=true "Title")
