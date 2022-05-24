@@ -2,7 +2,7 @@
 
 
 ## Using & Run ` `
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://git.heroku.com/egemengulpinar-finalproject.git)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/egemengulpinar/flask-machine-learning-crud.git)
 
 ```bash
   git clone https://github.com/egemengulpinar/flask-machine-learning-crud
