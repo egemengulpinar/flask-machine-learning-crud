@@ -2,6 +2,5 @@
   "name": "Node.js Sample",
   "description": "Egemen Gulpinar Flask ML CRUD Application Project",
   "repository": "https://github.com/egemengulpinar/flask-machine-learning-crud.git",
-  "logo": "https://node-js-sample.herokuapp.com/node.png",
   "keywords": ["node", "express", "static"]
 }
