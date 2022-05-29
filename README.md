@@ -21,7 +21,7 @@ pip install -r requirements.txt
 then,
 
 ```
-python source.py 
+python server.py 
 ```
 use  ```/main_login/login``` URL prefix for login the application.
 
